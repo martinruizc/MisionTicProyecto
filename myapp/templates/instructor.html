@@ -1,0 +1,22 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<h1>Instructors</h1>
+{% for instructor in instructors %}
+
+<div class="box">
+  <ul>
+    <li>{{instructor.first_name}} {{instructor.last_name}}</li>
+    <li>{{instructor.email}}</li>
+    <li>{{instructor.phone}}</li>
+    <li>{{instructor.city}}</li>
+    <li>{{instructor.description}}</li>
+  </ul>
+<a href="{% url 'instructor_detail' instructor.id %}">Edit</a>
+  
+</div>
+
+{% endfor %}
+
+
+{% endblock %}
