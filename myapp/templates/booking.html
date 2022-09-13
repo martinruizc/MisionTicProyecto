@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+
+<h1>Your bookings</h1>
+
+{% for i in booking %}
+<div class="box">
+  <ul>
+    <li>{{i.booking_date.date}}</li>
+    <li>{{i.booking_date.time}}</li>
+    <li>{{i.place}}</li>
+    <li>{{i.instructor.first_name}} {{i.instructor.last_name}} ({{i.instructor.email}})
+    </li>
+  </ul>
+  <a href="{% url 'booking_detail' i.id %}">Edit</a>
+</div>
+{% endfor %}
+
+
+
+{% endblock %}

@@ -3,9 +3,15 @@
 {% block content %}
 <h1>Instructor</h1>
 <form method="POST">
-  {{form}}
   {% csrf_token %}
+  {{form}}
+
   <button>Update</button>
+</form>
+
+<form action="{% url 'instructor_delete' instructor.id %}" method="POST">
+  {% csrf_token %}
+  <button>Delete</button>
 </form>
 
 

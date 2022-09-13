@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from .models import Instructor
-from .forms import InstructorForm
+from .models import Instructor, Booking
+from .forms import InstructorForm, BookingForm
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
@@ -52,7 +52,7 @@ def signin(request):
       })
     else:
       login(request, user)
-      return redirect('index')
+      return redirect('booking')
       
 
 def instructor(request):
@@ -75,7 +75,8 @@ def instructor_detail(request, id):
     instructor = Instructor.objects.get(id=id)
     form = InstructorForm(instance=instructor)
     return render(request, 'instructor_detail.html', {
-    'form': form
+    'form': form,
+    'instructor': instructor
     })
   
   else:
@@ -85,8 +86,49 @@ def instructor_detail(request, id):
     #return redirect(f'instructor')
     return redirect('instructor')
 
+def instructor_delete(request, id):
+  instructor = Instructor.objects.get(id=id)
+  if request.method == "POST":
+    instructor.delete()
+    return redirect('instructor')
 
+def create_booking(request):
+  if request.method == 'GET':
+    return render(request, 'create_booking.html', {
+      'form': BookingForm()
+    })
+  else:
+    form = BookingForm(request.POST)
+    new_booking = form.save(commit=False)
+    new_booking.user = request.user
+    new_booking.save()
+    return redirect('booking')
 
+def booking(request):
+  booking = Booking.objects.filter(user_id=request.user)
+  return render(request, 'booking.html', {
+    'booking': booking
+  })
+
+def booking_detail(request, id):
+  if request.method == 'GET':
+    booking = Booking.objects.get(id=id)
+    form = BookingForm(instance=booking)
+    return render(request, 'booking_detail.html',{
+      'form': form,
+      'booking': booking
+    })
+  else:
+    booking = Booking.objects.get(id=id)
+    form = BookingForm(request.POST, instance=booking)
+    form.save()
+    return redirect('booking')
+
+def booking_delete(request, id):
+  booking = Booking.objects.get(id=id)
+  if request.method == 'POST':
+    booking.delete()
+    return redirect('booking')
 
 
     

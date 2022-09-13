@@ -17,8 +17,8 @@
 {% if user.is_authenticated %}
       <li><a href="{% url 'instructor' %}">Instructor</li> </li>
       <li><a href="{% url 'create_instructor' %}">Create an instructor</li> </li>
-      <li><a href="#">Book a class</a> </li>
-      <li><a href="#"><i class="fa-solid fa-person-swimming fa-1x"></i> {{user.username}}
+      <li><a href="{% url 'create_booking' %}">Book a class</a> </li>
+      <li><a href="{% url 'booking' %}"><i class="fa-solid fa-person-swimming fa-1x"></i> {{user.username}}
       
       </a> </li>
       <li><a href="{% url 'signout' %}">Log out</a></li>
