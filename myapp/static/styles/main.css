@@ -22,3 +22,6 @@ nav li {
   float: left;
 }
 
+.error {
+  color: pink;
+}

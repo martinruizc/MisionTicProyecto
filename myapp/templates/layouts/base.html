@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/e21cec2af1.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{% static 'styles/main.css' %}">
   <title>SwimFast</title>
 </head>
@@ -13,11 +14,20 @@
   <nav>
     <ul>
       <li><a href="/">Home</a> </li>
+{% if user.is_authenticated %}
       <li><a href="{% url 'instructor' %}">Instructor</li> </li>
       <li><a href="{% url 'create_instructor' %}">Create an instructor</li> </li>
-      <li><a href="#">Schedule</a> </li>
-      <li><a href="#">Classes</a> </li>
-      <li><a href="#">Register/Sing In</a> </li>
+      <li><a href="#">Book a class</a> </li>
+      <li><a href="#"><i class="fa-solid fa-person-swimming fa-1x"></i> {{user.username}}
+      
+      </a> </li>
+      <li><a href="{% url 'signout' %}">Log out</a></li>
+{% else %}
+      <li><a href="{% url 'signin' %}">Sign in</a></li>
+      <li><a href="{% url 'signup' %}">Create an account</a> </li>
+{% endif %}
+
+      
     </ul>
   </nav>
 
