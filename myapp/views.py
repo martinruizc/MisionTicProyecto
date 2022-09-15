@@ -4,6 +4,7 @@ from .models import Instructor, Booking
 from .forms import InstructorForm, BookingForm
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
 # Create your views here.
@@ -33,6 +34,7 @@ def sign_up(request):
         'error': 'Password does\'t match'
       })
 
+@login_required
 def signout(request):
   logout(request)
   return redirect('index')      
@@ -48,20 +50,20 @@ def signin(request):
     if user is None:
       return render(request, 'signin.html', {
         'form': AuthenticationForm,
-        'error': 'Invalid credentials'
+        'error': 'Invalid credentials. Try again :)'
       })
     else:
       login(request, user)
       return redirect('booking')
       
-
+@login_required
 def instructor(request):
   instructor = Instructor.objects.all()
   return render(request, 'instructor.html',{
     'instructors': instructor
   })
 
-
+@login_required
 def create_instructor(request):
   if request.method == 'GET':
     return render(request, 'create_instructor.html', {
@@ -70,6 +72,7 @@ def create_instructor(request):
     Instructor.objects.create(first_name=request.POST['first_name'], last_name=request.POST['last_name'], email=request.POST['email'], phone=request.POST['phone'], city=request.POST['city'], description=request.POST['description'])
     return redirect('instructor')
 
+@login_required
 def instructor_detail(request, id):
   if request.method == 'GET' :
     instructor = Instructor.objects.get(id=id)
@@ -86,12 +89,14 @@ def instructor_detail(request, id):
     #return redirect(f'instructor')
     return redirect('instructor')
 
+@login_required
 def instructor_delete(request, id):
   instructor = Instructor.objects.get(id=id)
   if request.method == "POST":
     instructor.delete()
     return redirect('instructor')
 
+@login_required
 def create_booking(request):
   if request.method == 'GET':
     return render(request, 'create_booking.html', {
@@ -104,12 +109,14 @@ def create_booking(request):
     new_booking.save()
     return redirect('booking')
 
+@login_required
 def booking(request):
   booking = Booking.objects.filter(user_id=request.user)
   return render(request, 'booking.html', {
     'booking': booking
   })
 
+@login_required
 def booking_detail(request, id):
   if request.method == 'GET':
     booking = Booking.objects.get(id=id)
@@ -124,6 +131,7 @@ def booking_detail(request, id):
     form.save()
     return redirect('booking')
 
+@login_required
 def booking_delete(request, id):
   booking = Booking.objects.get(id=id)
   if request.method == 'POST':

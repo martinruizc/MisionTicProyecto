@@ -12,6 +12,7 @@
 </head>
 <body>
   <nav>
+    <div class=""">
     <ul>
       <li><a href="/">Home</a> </li>
 {% if user.is_authenticated %}
@@ -29,11 +30,13 @@
 
       
     </ul>
+  </div>
   </nav>
 
   {% block content %}
 
   {% endblock %}
+
 </body>
 </html>
 
