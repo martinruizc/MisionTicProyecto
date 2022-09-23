@@ -1,0 +1,88 @@
+.btn {
+  cursor: pointer;
+  background: #138769 ;
+  color: #fff;
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+}
+
+.btn-dark-plus {
+  cursor: pointer;
+  background: #6b1159 ;
+  color: #fff;
+  display: inline-block;
+  padding: 8px 30px;
+  border-radius: 5px;
+  border: none;
+}
+
+.btn-save {
+  cursor: pointer;
+  background: #0468bb;
+  color: #fff;
+  display: inline-block;
+  padding: 8px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.btn-delete {
+  cursor: pointer;
+  background: #af1c23;
+  color: #fff;
+  display: inline-block;
+  padding: 8px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn-light {
+  cursor: pointer;
+  background: #138769;
+  color: #fff;
+  border: none;
+  display: inline-block;
+  border-radius: 20px;
+  padding: 12px 30px;
+  width: 100%;
+}
+
+.btn-dark {
+  cursor: pointer;
+  background: #6b1159;
+  color: #fff;
+  border: none;
+  display: inline-block;
+  border-radius: 20px;
+  padding: 12px 30px;
+  width: 100%;
+}
+
+
+
+.container {
+  max-width: 400px;
+  margin: 150px auto;  
+}
+
+.container-table {
+  max-width: 850px;
+  margin: 80px auto;
+}
+
+.error {
+  color: #a2152a;
+  font-size: 12px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+

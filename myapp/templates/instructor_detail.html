@@ -1,18 +1,33 @@
 {% extends 'layouts/base.html' %}
 
 {% block content %}
-<h1>Instructor</h1>
-<form method="POST">
-  {% csrf_token %}
-  {{form}}
+<div class="wrapper">
+  <div class="image">
+    <img
+      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+      alt="woman" class="picture">
+    <div class="social">
+      <i class="fa-brands fa-twitter fa-1x"></i>
+      <i class="fa-brands fa-youtube fa-1x"></i>
+      <i class="fa-brands fa-instagram fa-1x"></i>
+    </div>
+  </div>
+  <div class="form form-instructor-details">
+    <h2 class="lh">Details</h2>
+    <form method="POST" class="form-edit">
+      {% csrf_token %}
+      {{form}}
+      <div class="box-button box-inst-details">
+        <button class="btn-save">Update</button>
+    </form>
+    <form action="{% url 'instructor_delete' instructor.id %}" method="POST">
+      {% csrf_token %}
+      <button class="btn-delete">Delete</button>
+  </div>
+  </form>
+</div>
+</div>
 
-  <button>Update</button>
-</form>
-
-<form action="{% url 'instructor_delete' instructor.id %}" method="POST">
-  {% csrf_token %}
-  <button>Delete</button>
-</form>
 
 
 

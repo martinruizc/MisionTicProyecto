@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -16,9 +17,8 @@ class Instructor(models.Model):
 
   
 class Booking(models.Model):
-  booking_date = models.DateTimeField()
+  date = models.DateField()
+  hour = models.TimeField()
   place = models.CharField(max_length=150)
   instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
   user = models.ForeignKey(User, on_delete=models.CASCADE)
-  
-

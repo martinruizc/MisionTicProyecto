@@ -1,17 +1,33 @@
 {% extends 'layouts/base.html' %}
 {% block content %}
 
-<h1>Details of your bookin class</h1>
+<div class="container">
+  <div class="form form-tag">
+    <h3 class="lh">Details</h3>
+    <form method="POST" class="form-edit">
+      {% csrf_token%}
 
-<form method="POST">
-{% csrf_token%}
-{{form}}
-<button>Save</button>
-</form>
+      <i class="fa-regular fa-calendar fa-0.2x"></i><label for="">Date:</label>
+      {{form.date}}
 
-<form action="{% url 'booking_delete' booking.id %}" method="POST">
-  {% csrf_token%}
-  <button>Delete</button>
-</form>
+      <i class="fa-regular fa-clock"></i><label for="">Time:</label>
+      {{form.hour}}
 
+      <i class="fa-solid fa-location-dot"></i><label for="">Location:</label>
+      {{form.place}}
+
+      <i class="fa-solid fa-user"></i><label for="">Instructor:</label>
+      {{form.instructor}}
+
+
+      <div class="box-button">
+      <button class="btn-save">Save</button>
+    </form>  
+  <form action="{% url 'booking_delete' booking.id %}" method="POST">
+    {% csrf_token%}
+    <button class="btn-delete">Delete</button>
+  </div>
+  </form>
+</div>
+</div>
 {% endblock %}

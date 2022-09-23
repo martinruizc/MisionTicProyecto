@@ -31,7 +31,7 @@ def sign_up(request):
     else:
       return render(request, 'signup.html', {
         'form': UserCreationForm,
-        'error': 'Password does\'t match'
+        'error': 'Password doesn\'t match'
       })
 
 @login_required

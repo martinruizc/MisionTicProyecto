@@ -1,22 +1,40 @@
 {% extends 'layouts/base.html' %}
 
 {% block content %}
-<h1>Instructors</h1>
-{% for instructor in instructors %}
 
-<div class="box">
-  <ul>
-    <li>{{instructor.first_name}} {{instructor.last_name}}</li>
-    <li>{{instructor.email}}</li>
-    <li>{{instructor.phone}}</li>
-    <li>{{instructor.city}}</li>
-    <li>{{instructor.description}}</li>
-  </ul>
-<a href="{% url 'instructor_detail' instructor.id %}">Edit</a>
-  
+<div class="heading">
+  <h2 class="hl">Instructors</h2>
+  <a href="{% url 'create_instructor' %}" class="btn-dark-plus"><i class="fa-solid fa-plus"></i>
+  </a>
 </div>
 
-{% endfor %}
+<div class="container-table">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>City</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for instructor in instructors %}
+    <tr>
+    <td>{{instructor.first_name}}</td>
+    <td>{{instructor.last_name}}</td>
+    <td>{{instructor.email}}</td>
+    <td>{{instructor.phone}}</td>
+    <td>{{instructor.city}}</td>
+   <td><a href="{% url 'instructor_detail' instructor.id %}" class="btn-save">Editar</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+ 
+</table>
+</div>
 
 
 {% endblock %}

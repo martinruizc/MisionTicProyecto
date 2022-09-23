@@ -1,11 +1,34 @@
 {% extends 'layouts/base.html' %}
 {% block content %}
 
-<p>Book an apoinment</p>
-<form action="/create_booking/" method="POST">
-  {% csrf_token %}
-  {{form}}
-  <button>Save</button>
-</form>
+
+
+<div class="container">
+  <div class="form form-tag">
+    <h3 class="lh">Book a class</h3>
+    <form action="/create_booking/" method="POST" class="form-edit">
+      {% csrf_token%}
+      <i class="fa-regular fa-calendar fa-0.2x"></i><label for="">Date:</label>
+      {{form.date}}
+
+      <i class="fa-regular fa-clock"></i><label for="">Time:</label>
+      {{form.hour}}
+
+      <i class="fa-solid fa-location-dot"></i><label for="">Location:</label>
+      {{form.place}}
+
+      <i class="fa-solid fa-user"></i><label for="">Instructor:</label>
+      {{form.instructor}}
+
+      <div class="box-button">
+        <button class="btn">Book</button>
+    </form>
+    <form action="/booking/">
+      <button class="btn-delete">Cancel</button>
+    </form>
+  </div>
+</div>
+
+
 
 {% endblock %}

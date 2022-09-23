@@ -1,164 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-html {
-  font-size: 10px;
-}
-
 body {
-  background-color: #fafafa;
+  font-family: 'Open Sans', sans-serif;
+  background: #f0f0f0;
   color: #333;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a {
-  text-decoration: none;
   color: #333;
+  text-decoration: none;
 }
 
-
-/* Utilities */
-.container {
-  margin: auto;
-  max-width: 300px;
+p {
+  margin: 0 10px;
 }
 
-/* Navbar */
-
-nav {
-  height: 5vh;
-  padding: 1.2rem;
-  background: #333;
-  color: #fff;
-  overflow: auto;  
-}
-
-nav ul {
+ul {
   list-style: none;
 }
 
-nav ul li {
-  float: left;
+h1, h2 {
+  font-weight: 300;
+  line-height: 1.2;
 }
 
+/* Navbar */
+.navbar {
+  display: flex;
+  background: #333;
+  color: #fff;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  top: 0%;
+  opacity: 0.8;
+  padding: 0 30px;
+}
 
-nav a {
+.navbar ul {
+  display: flex;
+}
+
+.navbar ul a {
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.navbar ul a:hover {
+  border-bottom: 2px #138769 solid;
+}
+
+/* Showcase */
+
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1530138897365-a9615c610099?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80') no-repeat center/cover;
+}
+
+.hero .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.hero .content h1 {
+  font-size: 50px;
+}
+
+.hero .content p {
+  max-width: 600px;
+  font-size: 20px;
+  margin: 15px 0 30px;
+}
+
+/* .hero::before { 
+  content: '';
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+} */
+
+.hero * {
+  z-index: 8;
+}
+
+/* Login */
+.form {
+  padding: 40px 40px 40px 40px;
+  border: 1px solid #ccc;
+  background: #fff;
+  height: 425px;
+}
+
+.form h2{
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 500;
+
+}
+
+.form-group label, .form-group input {
   display: block;
-  font-size: 1.6rem;
-  color: #fff;
-  padding: 0  10rem;
-  text-align: center;
 }
 
-nav li a:hover {
-  color: cadetblue;
+.form-group label {
+  font-size: 12px;
+  color: #4a4949;
+  margin-bottom: 3px;
 }
 
-/* Header */
-
-header {
-  background: url('https://images.unsplash.com/photo-1530138897365-a9615c610099?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80') no-repeat center center/cover;
-  height: 95vh;
-  color: #ccc;
-  text-align: center;
-}
-
-header h1 {
-  font-size: 4rem;
-  padding-top: 30rem;
-  color: #fff;
-}
-
-header p {
-  font-size: 1.4rem;
-  color: #fff;
-  margin: 2rem 0;
-}
-
-header .btn {
-  display: inline;
-  background: rgb(157, 225, 220);
+.form-group input {
+  width: 100%;
+  padding: 7px 7px;
+  border: #e5e5e5 1px solid;
   border-radius: 5px;
+  margin-bottom: 25px;
   color: #333;
-  font-size: 1.3rem;
-  padding: 0.8rem 3rem;
-
 }
 
-header .btn:hover {
-  background: rgb(34, 125, 147);
-  color: #fff;
+.form-group input:focus {
+  outline: none;
+  border-color: #333;
 }
+
+.form-footer .btn {
+  width: 100%;
+  border-radius: 30px;
+  margin: 25px 0 20px;
+  padding: 13px 0;
+  font-weight: 400;
+  font-size: 0.8rem
+}
+
+.form-footer p {
+  font-size: 12px;
+  color: #4a4949;
+}
+
+.form-footer a {
+  color: #138769;
+}
+
+
+/* Sign Up */
+
+.form-register {
+  height: 500px;
+}
+
+.form-register .form-group a {
+  color: #6b1159;
+}
+.form-group .helptext{
+  display: none;
+}
+
+/* Bookings */
 
 .box {
-  background-color: #555;
-  border-radius: 5px;
-  width: 500px; 
-  margin: 20px 30px;
-  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.error {
-  color:#ce1447;
-  font-size: 1.2rem;
+.box .box-1 {
+  display: flex;
+  flex-direction: column;
+  background: #333;
+  margin: 10px 3px;
+  width: 300px;
+  color: #fff; 
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.box-1 .icon {
+  padding: 15px 0;
+  color:#ccc;
   text-align: center;
 
 }
 
-/* Sign in */
 
-
-.form {
-  border: 1px #ccc solid;
-  background: #fff;
-  height: 38vh;
-  width: 28vw;
-  padding: 1.4rem 3rem;
-  margin-top: 3rem;
+.box .box-1 ul li {
+  padding-bottom: 20px;
 }
 
-.form h2 {
-  font-size: 2.5rem;
+.box .btn {
+  margin: 10px 5px;
   text-align: center;
-  padding: 3rem;
 }
 
-.form label {
-  font-size: 1.4rem;
-  display: block;
-  padding: 1rem 0;
+.heading {
+  display: flex;
+  justify-content: space-between;
+  margin: 90px 10px 30px 30px;
 }
 
-.form input {
-  display: block;
-  margin-bottom: 0.8rem;
-  padding: 0.6rem;
-  width: 100%;
+.heading h2 {
+  font-weight: 300;
+}
+
+
+/* Booking Details */
+.lh {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-tag {
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: #e5e5e5;
+  width: 400px;
+  height: 500px;
 }
 
-.form input:focus {
+
+.form-edit input {
+  display: block;
+}
+
+
+.form-edit input:focus, .form-edit .description:focus {
   outline: none;
-  border-color: #139576;
+  border: #333 1px solid; 
 }
 
-form .btn-form {
-  margin-top: 4rem;
-  background: #179b7b;
-  color: #fff;
-  border: 0;
-  border-radius: 40px;
+.form-edit i {
+  padding: 0 5px 5px 3px;
+}
+
+.form-edit label {
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+
+.form-edit input, .form-edit select {
   width: 100%;
-  padding: 1.8rem 0;
-  cursor: pointer;
-  font-size: 1.5rem;
+  padding: 7px 6px;
+  margin-bottom: 12px;
 }
 
-form .btn-form:hover {
-  background: #139576;
 
+.box-button {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.booking-box {
+  justify-content: start;
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(45deg, #1e8a6d, #057c5c);
+  height: 100vh;
+  align-items: center;
+}
+
+
+/* Instructors */
+.table {
+  width: 850px;
+  font-size: 14px;
+  border-spacing: 0px 0px;
+}
+
+.table thead {
+  background: #333;
+  color: #fff;
+}
+
+.table thead tr th {
+  padding: 10px 0;
+  font-size: 15px;
+}
+
+.table tbody td{
+  background-color: #fff;
+  border-bottom: 1px #333 solid;
+  text-align: center;
+  padding: 10px 0;
+} 
+
+/* Add Instructor */
+.wrapper {
+  display: flex;
+  margin: 150px auto;
+  max-width: 700px;
+  height: 700px;
+  border-radius: 10px;
+ 
+} 
+
+.wrapper .image {
+  border-top-left-radius: 20px;
+  background-color: #333;
+  width: 220px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding-top: 70px;
+  color: #fff;
+}
+
+.wrapper .image img {
+  border-radius: 70%;
+  margin-bottom: 13px;
+  width: 100px;
+}
+
+.wrapper .image .social i {
+  padding: 0 5px;
+}
+
+.description {
+  width: 100%;
+  height: 150px;
+  padding: 7px 7px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+
+.form-instructor-details {
+  width: 100%;
+  height: 700px;
+  border: none;
+}
+
+.box-inst-details {
+  margin-top: 10px;
 }
