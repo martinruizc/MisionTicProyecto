@@ -16,6 +16,7 @@
   padding: 8px 30px;
   border-radius: 5px;
   border: none;
+  margin-right: 10px;
 }
 
 .btn-save {
@@ -75,7 +76,7 @@
 }
 
 .container-table {
-  max-width: 850px;
+  max-width: 1000px;
   margin: 80px auto;
 }
 

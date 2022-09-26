@@ -30,6 +30,11 @@ h1, h2 {
   line-height: 1.2;
 }
 
+
+/* Header */
+.lh-heading {
+  font-weight: 500;
+}
 /* Navbar */
 .navbar {
   display: flex;
@@ -62,7 +67,7 @@ h1, h2 {
 
 .hero {
   height: 100vh;
-  background: url('https://images.unsplash.com/photo-1530138897365-a9615c610099?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80') no-repeat center/cover;
+  background: url('../image/showcase.jpg') no-repeat center/cover;
 }
 
 .hero .content {
@@ -275,7 +280,7 @@ h1, h2 {
 
 /* Instructors */
 .table {
-  width: 850px;
+  width: 1000px;
   font-size: 14px;
   border-spacing: 0px 0px;
 }
@@ -346,4 +351,17 @@ h1, h2 {
 
 .box-inst-details {
   margin-top: 10px;
+}
+
+/* Add an instructor */
+.form-instructor {
+  height: 750px;
+}
+
+.form-instructor label {
+  display: inline-block;
+}
+.form-instructor i {
+  margin-left: 3px;
+  padding-right: 2px;
 }

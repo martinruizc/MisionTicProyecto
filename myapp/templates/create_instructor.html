@@ -2,14 +2,33 @@
 
 {% block content%}
 
-<h1>Add an insctructer</h1>
+<div class="container form-instructor-container">
+<form method="POST" class="form form-group form-instructor">
+  <h3 class="lh">Add an instructor</h3>
 
-<form method="POST">
   {% csrf_token %}
-  {{form}}
-
-  <button>Add</button>
+  
+  <i class="fa-solid fa-user"></i>
+  <label for="">First Name</label>
+  {{form.first_name}}
+  <i class="fa-solid fa-user"></i>
+  <label for="">Last Name</label>
+  {{form.last_name}}
+  <i class="fa-solid fa-envelope"></i>
+  <label for="">Emial</label>
+  {{form.email}}
+  <i class="fa-solid fa-phone"></i>
+  <label for="">Phone</label>
+  {{form.phone}}
+  <i class="fa-solid fa-location-dot"></i>
+  <label for="">City</label>
+  {{form.city}}
+  <i class="fa-solid fa-comment"></i>
+  <label for="">Description</label>
+  {{form.description}}
+  <button class="btn-save">Add</button>
 </form>
+</div>
 
 
 {% endblock %}
