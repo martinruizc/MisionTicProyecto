@@ -9,11 +9,14 @@
   <script src="https://kit.fontawesome.com/e21cec2af1.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{% static 'styles/utilities.css' %}">
   <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+  <link rel="stylesheet" media="screen and (max-width: 768px)" href="{% static 'styles/mobile.css' %}">
   <title>SwimFast</title>
+  
 </head>
-<body>
-    <div id="navbar" class="navbar">
-      <h1 class="logo">SwimFast</h1>
+<body id="main">
+    <div id="navbar" class="navbar top">
+      <h1 class="logo"><a href="{% url 'index' %}" class="logo">
+        <span class="primary-text"><i class="fa-solid fa-person-drowning"></i> Swim</span>Fast</a></h1>
       <nav>
         <ul>
 
@@ -32,11 +35,23 @@
       </nav>
     </div>
 
+
+    <script>
+        const navbar = document.getElementById('navbar');
+
+        window.onscroll = function() {
+          if(window.pageYOffset > 100) {
+            navbar.classList.remove('top');
+          }
+          else {
+            navbar.classList.add('top');
+          }
+        }
+    </script>
+
   {% block content %}
   
   {% endblock %}
- 
-
 
   
 </body>

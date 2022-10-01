@@ -4,9 +4,128 @@
 
 <div class="hero">
   <div class="content">
-  <h1 class="lh-heading">Push Yourself</h1>
-  <p>Learn to Swim and Change Your Mind</p>
-  <a href="{% url 'signin' %}" class="btn">Start Now</a>
+    <h1 class="lh-heading">Push Yourself</h1>
+    <p>Learn to Swim and Change Your Mind</p>
+    <a href="{% url 'signin' %}" class="btn">Start Now</a>
+  </div>
 </div>
+
+<div id="staff">
+  <div class="staff-text">
+    <h3>OUR WORLD-CLASS INSTRUCTORS</h3>
+    <h2>Learn from real-world experts</h2>
+    <p>SwimFast instructors aren't just good swimmers, they also know how to get the best of you focusing on the
+      technique and making the experience fun! Trust me, your dopamines levels are going to increase in just the first
+      class. 😉</p>
+
+    <a href="#">MEET OUR INSTRUCTORS</a>
+  </div>
+  <div class="instructors-pic">
+    <img src="../static/image/staff.png" alt="instructors banner">
+  </div>
 </div>
+
+<div id="testimonials">
+  <div class="head">
+    <h2>What SwimFast students are saying</h2>
+    <p>Our classes and community have helped a lot swimmers to go form zero to swim fast and smoothly with great technique and having fun in the process.</p>
+  </div>
+
+  <div id="box-testimonial">
+    <div class="box-testimonial test-1">
+      <div class="text">
+        <p>
+          "Thanks to SwimFast I lost my fear of going to a swimming pool or avoiding any situation involving large amounts of water. Now I can swim without having the feeling that I am going to sink".</p>
+          <img src="../static/image/rating.png" alt="">
+        </div>
+      <div class="testimonial-pic">
+        <div class="img">
+          <img src="../static/image/person1.jpg" alt="">
+        </div>
+        <div class="text-2">
+          <h3>Enrique Polo</h3>
+          <p>Enroll 1 year ago</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="box-testimonial test-2">
+      <div class="text">
+        <p>
+          "I am not the kind of person who says words and words pointlessly. If you are here is because at least you have an intuition that swimming is something for you. If so, try to book a class and see how it goes. It helped a lot!".</p>
+          <img src="../static/image/rating.png" alt="">
+
+        </div>
+      <div class="testimonial-pic">
+        <div class="img">
+          <img src="../static/image/person2.jpg" alt="">
+        </div>
+        <div class="text-2">
+          <h3>Sara Castro</h3>
+          <p>Enroll 5 months ago</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+</div>
+
+
+<footer id="home-footer">
+  <div class="section">
+    <div class="logo">
+      <div class="logo-left">
+        <img class="logo-pic" src="../static/image/logo.png" alt="">
+        <img src="../static/image/logo-mision.png" alt="">
+      </div>
+      <div class="logo-right">
+        <ul>
+          <li>Quick Links</li>
+          <li><a href="#main">Home</a></li>
+          <li><a href="#staff"> Instructors</a></li>
+          <li><a href="#box-testimonial">Testimonials</a> </li>
+        </ul>
+        <ul>
+          <li>Bookings</li>
+          <li><a href="{% url 'booking' %}">Your Bookings</a></li>
+          <li><a href="{% url 'create_booking' %}">Book A Class</a></li>
+          <li><a href="{% url 'create_booking' %}">Reschedule A Class</a></li>
+          <li><a href="{% url 'create_booking' %}">Cancel A Class</a></li>
+        </ul>
+        <ul>
+          <li>Company</li>
+          <li><a href="#">About SwimFast</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="links">
+        <a href="https://github.com/martinruizc/MisionTicProyecto"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/mart%C3%ADn-ruiz-3b695024b/"><i class="fa-brands fa-linkedin-in"></i></a>
+        
+
+
+
+      </div>
+      <div class="copyrights">
+      <ul>
+        <a href="#"><li>Privacy</li></a>
+        <a href="#"><li>Terms</li></a>
+        <a href="#"><li>Cookies</li></a>
+      </ul>
+      <p>Copyright &copy; 2022, Martín Ruiz</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
 {% endblock %}

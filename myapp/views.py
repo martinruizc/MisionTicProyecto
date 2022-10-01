@@ -8,6 +8,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
 # Create your views here.
+
+def error_404_view(request, excpetion):
+  return render(request, '404.html')
+
 def main_page(request):
   return render(request, 'index.html')
 
@@ -26,7 +30,7 @@ def sign_up(request):
       except:
         return render(request, 'signup.html',{
           'form': UserCreationForm,
-          'error': 'username is alredy in used, try a new one'
+          'error': 'Username is already in used, try a new one'
         })
     else:
       return render(request, 'signup.html', {
@@ -50,7 +54,7 @@ def signin(request):
     if user is None:
       return render(request, 'signin.html', {
         'form': AuthenticationForm,
-        'error': 'Invalid credentials. Try again :)'
+        'error': 'Invalid credentials. Try again'
       })
     else:
       login(request, user)

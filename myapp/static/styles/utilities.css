@@ -1,10 +1,16 @@
+.primary-text {
+  color: #138769;
+}
+
+
+
 .btn {
   cursor: pointer;
   background: #138769 ;
   color: #fff;
   display: inline-block;
-  padding: 10px 30px;
-  border-radius: 5px;
+  padding: 12px 50px;
+  border-radius: 20px;
   border: none;
 }
 
@@ -13,7 +19,7 @@
   background: #6b1159 ;
   color: #fff;
   display: inline-block;
-  padding: 8px 30px;
+  padding: 10px 30px;
   border-radius: 5px;
   border: none;
   margin-right: 10px;
@@ -33,6 +39,18 @@
 .btn-delete {
   cursor: pointer;
   background: #af1c23;
+  color: #fff;
+  display: inline-block;
+  padding: 8px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+
+.btn-add {
+  cursor: pointer;
+  background: #138769;
   color: #fff;
   display: inline-block;
   padding: 8px 30px;
