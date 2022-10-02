@@ -615,20 +615,24 @@ h1, h2 {
 } 
   
 /* 404 Handle Page */
-#404 {
+#main-404 {
   height: 100vh;
-  background: url('../image/bg-404.png') no-repeat center center/cover;
+  background: url('../image/bg-404.png') no-repeat center 70px/cover;
   text-align: center;
   color: #fff;
-  line-height: 30px;
+  line-height: 35px;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-#404 h2{
-  margin-top: 600px;
+#main-404 h2{
+  margin-top: 10px;
   font-size: 30px;
 }
 
-#404 p {
+#main-404 p {
   margin: 0;
   font-size: 20px;
 }
