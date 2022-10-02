@@ -617,7 +617,7 @@ h1, h2 {
 /* 404 Handle Page */
 #404 {
   height: 100vh;
-  background: url('../image/bg-404.png') no-repeat center center/center;
+  background: url('../image/bg-404.png') no-repeat center center/cover;
   text-align: center;
   color: #fff;
   line-height: 30px;
