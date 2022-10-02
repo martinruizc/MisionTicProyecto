@@ -1,1 +1,1 @@
-web: gunicorn swimfast.wsgi --log-file -
+web: gunicorn swimfast.wsgi
