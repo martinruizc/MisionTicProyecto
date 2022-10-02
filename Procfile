@@ -1,0 +1,1 @@
+web: gunicorn swimfast.wsgi --log-file -
