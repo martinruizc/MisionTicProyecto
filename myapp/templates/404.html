@@ -1,1 +1,66 @@
-<p>Hola</p>
+{% extends 'layouts/base.html' %}
+{% block content %}
+
+
+<div id="404"> 
+<!-- <i class="fa-solid fa-fish"></i> -->
+<h2>Oppppppps</h2>
+<p>Seems you have lost your lane!</p>
+</div>
+
+
+
+<footer id="home-footer">
+  <div class="section">
+    <div class="logo">
+      <div class="logo-left">
+        <img class="logo-pic" src="../static/image/logo.png" alt="">
+        <img src="../static/image/logo-mision.png" alt="">
+      </div>
+      <div class="logo-right">
+        <ul>
+          <li>Quick Links</li>
+          <li><a href="#main">Home</a></li>
+          <li><a href="#staff"> Instructors</a></li>
+          <li><a href="#box-testimonial">Testimonials</a> </li>
+        </ul>
+        <ul>
+          <li>Bookings</li>
+          <li><a href="{% url 'booking' %}">Your Bookings</a></li>
+          <li><a href="{% url 'create_booking' %}">Book A Class</a></li>
+          <li><a href="{% url 'create_booking' %}">Reschedule A Class</a></li>
+          <li><a href="{% url 'create_booking' %}">Cancel A Class</a></li>
+        </ul>
+        <ul>
+          <li>Company</li>
+          <li><a href="#">About SwimFast</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="links">
+        <a href="https://github.com/martinruizc/MisionTicProyecto"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/mart%C3%ADn-ruiz-3b695024b/"><i class="fa-brands fa-linkedin-in"></i></a>
+        
+
+
+
+      </div>
+      <div class="copyrights">
+      <ul>
+        <a href="#"><li>Privacy</li></a>
+        <a href="#"><li>Terms</li></a>
+        <a href="#"><li>Cookies</li></a>
+      </ul>
+      <p>Copyright &copy; 2022, Martín Ruiz</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+{% endblock %}

@@ -614,6 +614,24 @@ h1, h2 {
   font-weight: 600;
 } 
   
+/* 404 Handle Page */
+#404 {
+  height: 100vh;
+  background: url('../image/bg-404.png') no-repeat center center/center;
+  text-align: center;
+  color: #fff;
+  line-height: 30px;
+}
+
+#404 h2{
+  margin-top: 600px;
+  font-size: 30px;
+}
+
+#404 p {
+  margin: 0;
+  font-size: 20px;
+}
 
 
 
