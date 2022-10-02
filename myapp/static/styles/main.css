@@ -628,8 +628,9 @@ h1, h2 {
 }
 
 #main-404 h2{
-  margin-top: 10px;
+  margin: 10px 0;
   font-size: 30px;
+  font-weight: 500;
 }
 
 #main-404 p {
